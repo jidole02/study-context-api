@@ -1,24 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import LeftPane from './components/LeftPane';
+import RightPane from './components/RightPane';
+import { SampleProvider } from './contexts/sample';
 
-function App() {
+// contex api는 클래스형으로 작성 (render 때문에 ?)
+const App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SampleProvider>
+      <div className="panes">
+        <LeftPane></LeftPane>
+        <RightPane></RightPane>
+      </div>
+    </SampleProvider>
   );
 }
 
